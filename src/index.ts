@@ -1,5 +1,7 @@
-function hello(name: string): string {
-  return `Hello, ${name}!`;
-}
+import { Renderer } from "./renderer.js";
 
-console.log(hello(""));
+window.onload = () => {
+    const canvas = <HTMLCanvasElement>document.getElementById('canvas');
+    const context = <CanvasRenderingContext2D> canvas.getContext('2d');
+    const renderer = new Renderer(context);
+}
