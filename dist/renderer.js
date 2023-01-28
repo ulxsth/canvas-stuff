@@ -1,14 +1,9 @@
-import { Color } from "./color";
-
 export class Renderer {
-    private context: CanvasRenderingContext2D;
-
-    constructor(context: CanvasRenderingContext2D) {
+    constructor(context) {
         this.context = context;
     }
-
     // TODO: 色適用
-    public drawCircle(x: number, y: number, r: number, color: Color): void {
+    drawCircle(x, y, r, color) {
         const context = this.context;
         context.fillStyle = color.rgba;
         context.beginPath();
@@ -17,3 +12,4 @@ export class Renderer {
         context.fill();
     }
 }
+//# sourceMappingURL=renderer.js.map
