@@ -1,7 +1,10 @@
-import { Actor } from "./Actor";
-import { Color } from "./Color";
-import { Renderer } from "./Renderer";
-import { schedule } from "./Scheduler";
+import { Fish } from "../Model/Fish.js";
+import { FishShape } from "../Model/shape/FishShape.js";
+import { Actor } from "./Actor.js";
+import { Color } from "./Color.js";
+import { Renderer } from "./Renderer.js";
+import { schedule } from "./Scheduler.js";
+import { Vector2D } from "./Vector2D.js";
 
 type Subscription = ReturnType<typeof schedule>;
 
@@ -20,14 +23,16 @@ export class Scene {
         this.renderer = renderer;
     }
 
-    public draw() {
+    public update(deltaTime: number) {
         this.renderer.clear(0, 0, this.width, this.height);
-        this.renderer.drawCircle(100, 100, 100, new Color("#000000"));
+        
+        const fish = new Fish(this, new Vector2D(200, 200));
+        fish.update(deltaTime);
     }
 
     public start() {
         this.end();
-        this._subscription = schedule(this.draw.bind(this));
+        this._subscription = schedule(this.update.bind(this));
     }
 
     public end() {
