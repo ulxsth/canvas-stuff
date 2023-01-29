@@ -1,6 +1,6 @@
-import { Color } from "./Color.js";
-import { Renderer } from "./Renderer.js";
-import { Scene } from "./Scene.js";
+import { Color } from "./core/Color.js";
+import { Renderer } from "./core/Renderer.js";
+import { Scene } from "./core/Scene.js";
 
 window.onload = () => {
     const canvas = <HTMLCanvasElement>document.getElementById('canvas');

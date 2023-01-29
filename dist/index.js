@@ -1,5 +1,5 @@
-import { Renderer } from "./Renderer.js";
-import { Scene } from "./Scene.js";
+import { Renderer } from "./core/Renderer.js";
+import { Scene } from "./core/Scene.js";
 window.onload = () => {
     const canvas = document.getElementById('canvas');
     const width = canvas.width;
