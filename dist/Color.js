@@ -30,7 +30,9 @@ export class Color {
         return new Color(code, alpha);
     }
     toHexString() {
-        return `#${this.r.toString(16)}${this.g.toString(16)}${this.b.toString(16)}`;
+        return `#${this.r.toString(16)}
+        ${this.g.toString(16)}
+        ${this.b.toString(16)}`;
     }
 }
-//# sourceMappingURL=color.js.map
+//# sourceMappingURL=Color.js.map

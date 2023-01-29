@@ -1,10 +1,16 @@
-import { Color } from "./color";
+import { Color } from "./Color";
 
 export class Renderer {
     private context: CanvasRenderingContext2D;
 
     constructor(context: CanvasRenderingContext2D) {
         this.context = context;
+    }
+
+    public clear(x:number, y:number, width: number, height: number) {
+        const context = this.context;
+        context.fillStyle = "rgba(0,0,0,0)";
+        context.clearRect(x, y, width, height);
     }
 
     public drawCircle(x: number, y: number, r: number, color: Color): void {
